@@ -6,21 +6,26 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ===================== */
   /* 🔎 Search bar logic   */
   /* ===================== */
-  const searchBar = document.getElementById("searchBar");
+  const searchButton = document.querySelector(".search-btn");
 
-  if (searchBar) {
-    searchBar.addEventListener("keyup", function () {
-      const filter = searchBar.value.toLowerCase();
+function runSearch() {
+  const filter = searchBar.value.toLowerCase();
+  const products = document.querySelectorAll(".pr, .product-card, .productcard");
 
-      // Supports .pr, .product-card AND .productcard
-     const products = document.querySelectorAll(".pr, .product-card, .productcard");
+  products.forEach((item) => {
+    const text = item.innerText.toLowerCase();
+    item.style.display = text.includes(filter) ? "" : "none";
+  });
+}
 
-      products.forEach((item) => {
-        const text = item.innerText.toLowerCase();
-        item.style.display = text.includes(filter) ? "" : "none";
-      });
-    });
-  }
+if (searchBar) {
+  searchBar.addEventListener("keyup", runSearch);
+}
+
+if (searchButton && searchBar) {
+  searchButton.addEventListener("click", runSearch);
+}
+
 
   /* ============================= */
   /* ✨ Scroll-in animations       */
@@ -220,4 +225,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
 
