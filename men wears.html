@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mens Wear</title>
+    <link rel="icon" type="img/jpg" href="LOGO.M.png">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f6e6d3;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #e3b4ad;
+            /* Light grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #a45e54;
+            /* Dark grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        /* Change the thumb on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #50312d;
+            /* Darker grey */
+        }
+
+
+
+        header {
+            background-color: #4b2e2a;
+            margin: -8px;
+        }
+
+        header img {
+            width: 100px;
+        }
+
+        .logo {
+            display: flex;
+        }
+
+        .text {
+            text-align: center;
+            color: #f6e6d3;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #5a3e2b;
+        }
+
+        .scroll-container {
+            margin: auto;
+            width: 86%;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: floralwhite;
+            box-shadow: 0 0 10px #4b2e2a;
+            margin-top: 100px;
+        }
+
+        .con {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #5a3e2b #f0e8dd;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: #f0e8dd;
+            border-radius: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #5a3e2b;
+            border-radius: 10px;
+        }
+
+        .product-card {
+            min-width: 200px;
+            max-width: 220px;
+            background: #fff;
+            border: 2px solid #d4b483;
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px gray;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        /* ✅ All images same size */
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            /* desktop default */
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0 5px;
+            color: #5a3e2b;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .product-card .price {
+            display: block;
+            font-weight: bold;
+            color: #b33c00;
+            font-size: 16px;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            background: #fdf7f0;
+        }
+
+        .scroll-container h2 {
+            margin-top: -2px;
+            margin-bottom: 1px;
+            margin-left: 10px;
+        }
+
+        .cart {
+            border: 1px solid #4b2e2a;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            background-color: #4b2e2a;
+            color: white;
+        }
+
+        .after-cart {
+            background-color: green;
+
+        }
+
+        .cart:hover {
+            cursor: pointer;
+        }
+
+        .end {
+            background-color: #4b2e2a;
+            color: #f6e6d3;
+            padding: 10px;
+            text-align: center;
+            margin: -8px;
+            margin-top: 50px;
+        }
+
+        .end p {
+            padding: 10px;
+        }
+
+        /* ---------------- Responsive additions (do not change class names) ---------------- */
+
+        /* Large tablets / small desktops */
+        @media (max-width: 1024px) {
+            .section-title {
+                font-size: 24px;
+            }
+
+            header img {
+                width: 80px;
+            }
+
+            .scroll-container {
+                width: 92%;
+                padding: 18px;
+                margin-top: 80px;
+            }
+
+            .product-card {
+                min-width: 180px;
+                max-width: 200px;
+            }
+
+            .product-card img {
+                height: 170px;
+            }
+
+            /* ✅ same size on tablet */
+        }
+
+        /* Tablets / landscape phones */
+        @media (max-width: 768px) {
+            .logo {
+                align-items: center;
+                gap: 10px;
+            }
+
+            header img {
+                width: 70px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .scroll-container {
+                width: 95%;
+                padding: 16px;
+                margin-top: 60px;
+            }
+
+            .con {
+                gap: 14px;
+                padding: 8px 0;
+            }
+
+            .product-card {
+                min-width: 170px;
+                max-width: 190px;
+                padding: 9px;
+            }
+
+            .product-card img {
+                height: 150px;
+            }
+
+            /* ✅ same size on landscape phones */
+            .product-card h3 {
+                font-size: 16px;
+            }
+
+            .product-card p {
+                font-size: 13px;
+            }
+        }
+
+        /* Mobile phones */
+        @media (max-width: 480px) {
+            .logo {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header img {
+                width: 60px;
+                margin: 8px auto;
+            }
+
+            .text {
+                padding: 6px 8px;
+            }
+
+            .scroll-container {
+                width: calc(100% - 20px);
+                padding: 12px;
+                margin-top: 40px;
+            }
+
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .con {
+                gap: 12px;
+                padding: 6px 0;
+            }
+
+            .product-card {
+                min-width: 150px;
+                max-width: 180px;
+                padding: 8px;
+            }
+
+            .product-card img {
+                height: 130px;
+            }
+
+            /* ✅ same size on small phones */
+            .product-card h3 {
+                font-size: 15px;
+            }
+
+            .product-card p {
+                font-size: 12px;
+            }
+
+            .product-card .price {
+                font-size: 15px;
+            }
+
+            .cart {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            .end {
+                margin-top: 30px;
+            }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 360px) {
+            .product-card {
+                min-width: 140px;
+                max-width: 160px;
+            }
+
+            .product-card img {
+                height: 120px;
+            }
+
+            /* ✅ same size on very small screens */
+            .section-title {
+                font-size: 18px;
+            }
+        }
+
+        /* Accessibility: increase hit area for product cards on touch devices */
+        @media (hover: none) {
+            .product-card {
+                transform: none;
+            }
+
+            .product-card:active {
+                transform: scale(1.02);
+            }
+        }
+
+        /* Scrollbar tweaks for small screens */
+        @media (max-width: 600px) {
+            .scroll-container::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            .scroll-container::-webkit-scrollbar-thumb {
+                border-radius: 6px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo2.png" alt="">
+            <div class="text">
+                <h1>Trivana Arts & Crafts</h1>
+                <p>"Where Heritage Meets the World."</p>
+            </div>
+        </div>
+    </header>
+    <!-- <h2 class="section-title">Explore Trivana Crafts</h2> -->
+    <!-- <h2 class="section-title">Explore Trivana Crafts</h2> -->
+    <div class="scroll-container">
+        <h2>Muffaler</h2><hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrRzUVisyS-VaifJ77tafyYlJP4uzy0ZI0zg&s"
+                    alt="Handmade Bamboo Basket">
+                <h3>styliesh Muffaler</h3>
+                <p>head work mauffaler in tribel style.</p>
+                <span class="price">₹1500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc7wpyyi_YZd3_CwTH0ijQ320K1YZUXRL9yA&s" alt="Warli Tribal Painting">
+                <h3>Tribel Muffaler</h3>
+                <p>the tribel is best art work for tribel's.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQchHsH1rI_AoH5j6qmwMC8E78ltUTccMYydg&s" alt="Terracotta Pot">
+                <h3>The Muffaler</h3>
+                <p>the best printed Muffaler art.</p>
+                <span class="price">₹6,500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiOGOhKmFWgIX_qDC9CRoyZV9eCqGduemZjm153AeZmOEXyygwOIYMi7GQybwaualpwsI&usqp=CAU" alt="Bead Necklace">
+                <h3>cotton Muffaler</h3>
+                <p>the cotton Muffaler art is comen for Muffaler style.</p>
+                <span class="price">₹3,500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://www.pashtush.com/cdn/shop/files/pashtush-pashmina-pashtush-mens-paisley-design-soft-bamboo-scarf-golden-zari-thread-weave-18911023595574.jpg?v=1712886825&width=1080" alt="Wooden Tribal Mask">
+                <h3>black Muffaler</h3>
+                <p>black and white style Muffaler and tribal art.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://pashtush.in/cdn/shop/products/pashtush-pashmina-pashtush-mens-woven-ethnic-stole-extra-soft-bamboo-fibre-29238723379254.jpg?v=1752503302&width=1080" alt="Wooden Tribal Mask">
+                <h3>Muffaler art's</h3>
+                <p>the art's and craft best Muffaler for men.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://pashtush.in/cdn/shop/products/pashtush-pashmina-pashtush-mens-jamawar-stole-navy-blue-29915335688246.jpg?v=1639225323&width=1080" alt="Wooden Tribal Mask">
+                <h3>The himachal style Muffaler</h3>
+                <p>the himachal Muffaler is best cotton is a himachal tribes art.</p>
+                <span class="price">₹3,000</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5X54GOry5KzPBktFg-7UJdwJ5WxxdaqLU04s_bydyluxKtlJTDhpByTgK4QLpgO6Qctw&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>Muffaler's</h3>
+                <p>the muffaler's are a simpel way to tribes craft.</p>
+                <span class="price">₹4,750</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://taroob.in/cdn/shop/files/179.png?v=1720716485" alt="Wooden Tribal Mask">
+                <h3>THE mufi's</h3>
+                <p>the mufi's is style of uttar pradesh tribel muffaler style.</p>
+                <span class="price">₹8,500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://taroob.in/cdn/shop/products/1_ae9c55a3-7583-4236-a8ee-b4260c2b776f.png?v=1689835309" alt="Wooden Tribal Mask">
+                <h3>Mufi's</h3>
+                <p>the mufi tribel is a main to make muffaler Artist.</p>
+                <span class="price">₹3,600</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="scroll-container">
+        <h2>Koti</h2><hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71GIQS7Wd2L._UY1100_.jpg">
+                <h3>koti's</h3>
+                <p>Colorful,mirror and sell art to make koti    .</p>
+                <span class="price">₹1,500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSShNqYEmG85Laxu9uhDMJaWPje7Jfq1xHCh4iX_NzmljXhuh_zWl6i8PKzesNkGQq3JEA&usqp=CAU" alt="Warli Tribal Painting">
+                <h3>gujarati koti</h3>
+                <p>this type of koti is make for navarati in gujarati tribes.</p>
+                <span class="price">₹2,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCCqHHBW_uJNjyfp-VYtTkeaneghAIot4q2A&s" alt="Terracotta Pot">
+                <h3>kediyu</h3>
+                <p>kediyu is a tribel art form of gujarati artist</p>
+                <span class="price">₹3,550</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVnoJTSjaufHZqlSTo6oIgrr7sQ_nGMYHhSQ&s" alt="Bead Necklace">
+                <h3>kadiyu fot navratri</h3>
+                <p>kediyu is a festivel's of navaratri.</p>
+                <span class="price">₹1,350</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxbfK96ekUt_7H3OA3QnR-q0leH4AWekzIwpdqIOiSFoSWUMZo7Bj2rl8rZTSuNmag7cg&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>navratri feshon's</h3>
+                <p>navratri is 9 day fastivel for ma amba.</p>
+                <span class="price">₹3,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOQpwIVE1Kkp2_Wjh-D9Crxd8LNf1eSDRUcQ&s" alt="Wooden Tribal Mask">
+                <h3>Kadiya's </h3>
+                <p>kadiya's is a tribel art and craft for navratri.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://5.imimg.com/data5/GH/OH/RK/IOS-35695888/product-jpeg-250x250.png" alt="Wooden Tribal Mask">
+                <h3>ptinted koti.</h3>
+                <p> this is kachi work is famas for makeing kadiya.</p>
+                <span class="price">₹1,000</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.etsystatic.com/20486437/r/il/0702a7/4582441270/il_570xN.4582441270_jqi0.jpg" alt="Wooden Tribal Mask">
+                <h3>kachi work's</h3>
+                <p>kachi work is all our world famas and best selling for kediyu.</p>
+                <span class="price">₹4,999</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://5.imimg.com/data5/ANDROID/Default/2023/4/300334091/GX/XM/OP/64351519/product-jpeg-500x500.jpg" alt="Wooden Tribal Mask">
+                <h3>kadiyas and shrit</h3>
+                <p>the bhavanager art mell is tribal kadiyas and dhoti.</p>
+                <span class="price">₹3,000</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoyKmcLTqba3Wlyt3s_IH6612-CuExnJO_3dclwL7E_yRKotkEyKkcnOa-x3QrnXfRclI&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>kadiya's</h3>
+                <p>the kadiya is a best work is make by tribal art and craft.</p>
+                <span class="price">₹2,500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-container">
+        <h2>kurta</h2><hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://www.shasakclothing.com/cdn/shop/files/DSC04836_788df647-e4ca-49ac-923a-1d93c17ec90a.jpg?v=1729579809https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-nY53R-oCEsG9eXObKujX76fqfGwotn3zudN8NO32UzhGzVQkpwxGgtrWVfYfqcgnaBQ&usqp=CAU&width=3840">
+                <h3>kurataa</h3>
+                <p>this tribel art kurata is dedicated off the tribel's sanskruti.</p>
+                <span class="price">₹2,500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiIkh7D4hNBWfFcaL0daQvJIByg8BoAe4JHg&s" alt="Warli Tribal Painting">
+                <h3>tribel kurata</h3>
+                <p>the tribel kurata is a specially them triba and art.</p>
+                <span class="price">₹3,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyhl3Cze1-WSg1GV680zeJ0VwfTnrrn_hFUyyS4uUPuzjnswJyeAU_tjqrEDeyG5sBZmY&usqp=CAU" alt="Terracotta Pot">
+                <h3>kurata and jabho</h3>
+                <p>the trible make a natural daya and febarik and hend craft.</p>
+                <span class="price">₹3,550</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20241003/61Tz/66feaf18f9b8ef490b909548/-473Wx593H-700526869-green-MODEL5.jpg" alt="Bead Necklace">
+                <h3>cotton kurataa</h3>
+                <p>The tribel make a natural cotton and color to make kurata best.</p>
+                <span class="price">₹2,350</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFtvCaxOBvs_GkvjWIckZEQInVLnF9d0IykA&s" alt="Wooden Tribal Mask">
+                <h3>tribel print</h3>
+                <p>this kurataa is specially make byy tribel print.</p>
+                <span class="price">₹3,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://itokri.com/cdn/shop/files/0Q8A9902_45fa00ab-5232-4671-a6c9-eb372a131116.jpg?v=1725026920&width=480"
+                 alt="Wooden Tribal Mask">
+                <h3>The kurataa's</h3>
+                <p>the kurataa make by the poor and bager tribel people's.</p>
+                <span class="price">₹2,500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRncIGEIteqZcC-HwNNEn53P13JY4HD0qF3uyZoxpxx55G5eZeDgjjZt4eK3ZmubaW1dMg&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>kurataa's</h3>
+                <p> A kurata is famas form a stats by gujarat for navaratri.</p>
+                <span class="price">₹3,699</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://itokri.com/cdn/shop/files/ajrakh-block-printed-cotton-men-long-kurta-15-kurtas-red-paisley-975.jpg?crop=center&height=2000&v=1755686719&width=2000" alt="Wooden Tribal Mask">
+                <h3>kurataa and shrit</h3>
+                <p>tribel kurataa is specially making by cotton and Nature colour</p>
+                <span class="price">₹1,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-nY53R-oCEsG9eXObKujX76fqfGwotn3zudN8NO32UzhGzVQkpwxGgtrWVfYfqcgnaBQ&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>Natur kurataa.</h3>
+                <p>Teibel art and craft is not for only paintingbut there are kurata and ect.</p>
+                <span class="price">₹2,999</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQEwZk-9Fh0lEA13kDgPO-Y9TOxqe2WI2FeQ&s">
+                <h3>short kurataa</h3>
+                <p>There have many type of kurataa , shrot kurataa and shrit.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="end">
+       <h2>© 2025. All Rights Are Reserved By The_Glitchhunter.</h2>
+    </div>
+    <script src="product.js"></script>
+</body>
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladies Wear</title>
+    <link rel="icon" type="img/jpg" href="LOGO.M.png">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f6e6d3;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #e3b4ad;
+            /* Light grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #a45e54;
+            /* Dark grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        /* Change the thumb on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #50312d;
+            /* Darker grey */
+        }
+
+
+
+        header {
+            background-color: #4b2e2a;
+            margin: -8px;
+        }
+
+        header img {
+            width: 100px;
+        }
+
+        .logo {
+            display: flex;
+        }
+
+        .text {
+            text-align: center;
+            color: #f6e6d3;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #5a3e2b;
+        }
+
+        .scroll-container {
+            margin: auto;
+            width: 86%;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: floralwhite;
+            box-shadow: 0 0 10px #4b2e2a;
+            margin-top: 100px;
+        }
+
+        .con {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #5a3e2b #f0e8dd;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: #f0e8dd;
+            border-radius: 10px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #5a3e2b;
+            border-radius: 10px;
+        }
+
+        .product-card {
+            min-width: 200px;
+            max-width: 220px;
+            background: #fff;
+            border: 2px solid #d4b483;
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px gray;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        /* ✅ All images same size */
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            /* desktop default */
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0 5px;
+            color: #5a3e2b;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .product-card .price {
+            display: block;
+            font-weight: bold;
+            color: #b33c00;
+            font-size: 16px;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            background: #fdf7f0;
+        }
+
+        .scroll-container h2 {
+            margin-top: -2px;
+            margin-bottom: 1px;
+            margin-left: 10px;
+        }
+
+        .cart {
+            border: 1px solid #4b2e2a;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            background-color: #4b2e2a;
+            color: white;
+        }
+
+        .after-cart {
+            background-color: green;
+
+        }
+
+        .cart:hover {
+            cursor: pointer;
+        }
+
+        .end {
+            background-color: #4b2e2a;
+            color: #f6e6d3;
+            padding: 10px;
+            text-align: center;
+            margin: -8px;
+            margin-top: 50px;
+        }
+
+        .end p {
+            padding: 10px;
+        }
+
+        /* ---------------- Responsive additions (do not change class names) ---------------- */
+
+        /* Large tablets / small desktops */
+        @media (max-width: 1024px) {
+            .section-title {
+                font-size: 24px;
+            }
+
+            header img {
+                width: 80px;
+            }
+
+            .scroll-container {
+                width: 92%;
+                padding: 18px;
+                margin-top: 80px;
+            }
+
+            .product-card {
+                min-width: 180px;
+                max-width: 200px;
+            }
+
+            .product-card img {
+                height: 170px;
+            }
+
+            /* ✅ same size on tablet */
+        }
+
+        /* Tablets / landscape phones */
+        @media (max-width: 768px) {
+            .logo {
+                align-items: center;
+                gap: 10px;
+            }
+
+            header img {
+                width: 70px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .scroll-container {
+                width: 95%;
+                padding: 16px;
+                margin-top: 60px;
+            }
+
+            .con {
+                gap: 14px;
+                padding: 8px 0;
+            }
+
+            .product-card {
+                min-width: 170px;
+                max-width: 190px;
+                padding: 9px;
+            }
+
+            .product-card img {
+                height: 150px;
+            }
+
+            /* ✅ same size on landscape phones */
+            .product-card h3 {
+                font-size: 16px;
+            }
+
+            .product-card p {
+                font-size: 13px;
+            }
+        }
+
+        /* Mobile phones */
+        @media (max-width: 480px) {
+            .logo {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header img {
+                width: 60px;
+                margin: 8px auto;
+            }
+
+            .text {
+                padding: 6px 8px;
+            }
+
+            .scroll-container {
+                width: calc(100% - 20px);
+                padding: 12px;
+                margin-top: 40px;
+            }
+
+            .section-title {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .con {
+                gap: 12px;
+                padding: 6px 0;
+            }
+
+            .product-card {
+                min-width: 150px;
+                max-width: 180px;
+                padding: 8px;
+            }
+
+            .product-card img {
+                height: 130px;
+            }
+
+            /* ✅ same size on small phones */
+            .product-card h3 {
+                font-size: 15px;
+            }
+
+            .product-card p {
+                font-size: 12px;
+            }
+
+            .product-card .price {
+                font-size: 15px;
+            }
+
+            .cart {
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            .end {
+                margin-top: 30px;
+            }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 360px) {
+            .product-card {
+                min-width: 140px;
+                max-width: 160px;
+            }
+
+            .product-card img {
+                height: 120px;
+            }
+
+            /* ✅ same size on very small screens */
+            .section-title {
+                font-size: 18px;
+            }
+        }
+
+        /* Accessibility: increase hit area for product cards on touch devices */
+        @media (hover: none) {
+            .product-card {
+                transform: none;
+            }
+
+            .product-card:active {
+                transform: scale(1.02);
+            }
+        }
+
+        /* Scrollbar tweaks for small screens */
+        @media (max-width: 600px) {
+            .scroll-container::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            .scroll-container::-webkit-scrollbar-thumb {
+                border-radius: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo2.png" alt="">
+            <div class="text">
+                <h1>Trivana Arts & Crafts</h1>
+                <p>"Where Heritage Meets the World."</p>
+            </div>
+        </div>
+    </header>
+    <!-- <h2 class="section-title">Explore Trivana Crafts</h2> -->
+    <!-- <h2 class="section-title">Explore Trivana Crafts</h2> -->
+    <div class="scroll-container">
+        <h2>sarees</h2>
+        <hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/eb/0c/78/eb0c78dd4c0e82dc51025009da425743.jpg"
+                    alt="Handmade Bamboo Basket">
+                <h3>Ikat printed saree</h3>
+                <p>Gond tribal printed saree by tribal artist.</p>
+                <span class="price">₹5,ooo</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/R.648ebe4b70bca82d3a01588676bdf22a?rik=z4%2bPlvf%2bwqly3A&riu=http%3a%2f%2fwww.koshalcrafts.com%2fcdn%2fshop%2fproducts%2fsc130-_1.jpg%3fv%3d1612625248&ehk=PNxCaUAhq4ACqECi7TP%2fTAKzcQVU3eO%2fVv%2fnusOOFss%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Warli Tribal Painting">
+
+                <h3>Brown and red saree</h3>
+                <p>Traditional sambaipuri pattern cotton saree.</p>
+                <span class="price">₹2,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://tse1.explicit.bing.net/th/id/OIP.MdnaknYd_WPGr6qTjZ85jgHaLH?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Terracotta Pot">
+                <h3>Block printed saree</h3>
+                <p>red and black block maheshwarisilk saree .</p>
+                <span class="price">₹7,500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://tse1.explicit.bing.net/th/id/OIP.8LNcqF10algtHgTR_WfuDwHaLH?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Bead Necklace">
+                <h3>Maheshwari silk saree</h3>
+                <p>Highly demanded maheshwari saree with tribal printed.</p>
+                <span class="price">₹3,000</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://i.pinimg.com/originals/10/45/3a/10453a801be55dfc15f166c52030746a.jpg"
+                    alt="Wooden Tribal Mask">
+                <h3>Kosa silk saree</h3>
+                <p>Black and white tribal art hand printed kosa saree.</p>
+                <span class="price">₹5,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.pinimg.com/originals/a9/0c/07/a90c072b1138f885f7d48a54a5c3e03e.jpg">
+                <h3>off white bhagalpuri saree</h3>
+                <p>tribal art bhagalpuri printed saree.</p>
+                <span class="price">₹3,500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://pattashree.com/wp-content/uploads/2023/10/New-saree__cotton_set293_shrestha_front1__2023-10-13-13-11-9__2730X4096.jpg"
+                    alt="Wooden Tribal Mask">
+                <h3>pure red mulmul saree </h3>
+                <p>jaipuri block printed saree By Tribal Women Artist.</p>
+                <span class="price">₹7,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://media.urbanwomania.com/wp-content/uploads/2024/03/Cream-and-Magenta-Silk-Saree-with-Tribal-Print.webp"
+                    alt="Wooden Tribal Mask">
+                <h3>cream and brown silk saree</h3>
+                <p>brown and cream silk printed tribal saree.</p>
+                <span class="price">₹2,500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="scroll-container">
+        <h2>Kurtis</h2>
+        <hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_100,w_1080/v1/assets/images/29403816/2024/5/7/8b9f12a4-5e73-47ca-a9b0-ced03a437ac11715085413326WomensWearMulticolorCottonTribalPrintedShortKurti1.jpg"
+                    alt="Handmade Bamboo Basket">
+                <h3>aqua blue multi colour kurti</h3>
+                <p>Anouk tribal printed short cotton kurti.</p>
+                <span class="price">₹2500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://www.graphicsutra.com/img/productimg/brown_tribal_design_both_side_kurti_handwoven_cotton_dry_wash_s-717.webp"
+                    alt="Warli Tribal Painting">
+                <h3>sambalpuri desigh kurti</h3>
+                <p>Brown tribal both side kurti.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_100,w_1080/v1/assets/images/20952772/2022/11/26/42eb4d5b-5841-4d47-aab1-69c1c4fe9a7d1669471064406SILAIBUNAIKURTA1.jpg"
+                    alt="Terracotta Pot">
+                <h3>Silai bunai cotton kurti</h3>
+                <p>silai bunai grey tribal printed cotton kurti.</p>
+                <span class="price">₹3550</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img
+                    src="https://th.bing.com/th/id/OIP.Jvlmj9OCTTTiST5ybKMoxwHaJ4?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3">
+                <h3>keshubaba desgin kurti</h3>
+                <p>tribal desgin kurti by tribal womam.</p>
+                <span class="price">₹1,000</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://i.pinimg.com/originals/62/6c/0c/626c0c1daca763aa23d791718f9d6bca.jpg"
+                    alt="Wooden Tribal Mask">
+                <h3>kalamkari printed kurti</h3>
+                <p>Black and red kalamkari printed cotton kurti.</p>
+                <span class="price">₹5100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://img.faballey.com/images/Product/ITN04919Z/d4.jpg" alt="Wooden Tribal Mask">
+                <h3>Red batik kurti</h3>
+                <p>red batik print anarkali kurti.</p>
+                <span class="price">₹5,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://zeresouq.com/cdn/shop/files/2_4fcd25bd-cc93-4c16-a435-226a41dde2b4.jpg?v=1717494189&width=900"
+                    alt="Wooden Tribal Mask">
+                <h3>straight bagru kurti.</h3>
+                <p> Red straigt line bagru kurti.</p>
+                <span class="price">₹6,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://assets.myntassets.com/h_200,w_200,c_fill,g_auto/h_1440,q_100,w_1080/v1/assets/images/30964913/2025/1/7/8e36c2e1-0944-4a16-81c1-b2be1fd0377a1736235270339-Taavi-Women-Kurtis-8131736235269775-1.jpg"
+                    alt="Wooden Tribal Mask">
+                <h3>ethnic bagru kurti</h3>
+                <p>taavi pure cotton ethnic motifs printed kurti.</p>
+                <span class="price">₹7,00</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="scroll-container">
+        <h2>Dupatta</h2>
+        <hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.-EAX3bUL4exYCO04VodfBQHaJ4?rs=1&pid=ImgDetMain&o=7&rm=3">
+                <h3>Ikat design dupatta</h3>
+                <p>handwoven ikat dupatta by tribal girls.</p>
+                <span class="price">₹2500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://cdn.shopify.com/s/files/1/1899/9109/products/DCHP3565_2048x.jpg?v=1569138222"
+                    alt="Warli Tribal Painting">
+                <h3>Sambalpuri style dupatta</h3>
+                <p>ikat handloom cotton with sambalpuri dupatta.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/R.c3e62a82e74257232d7eb16f0bd0f015?rik=6%2fHUDNiySs4tIw&riu=http%3a%2f%2fmasakalee.com%2fcdn%2fshop%2fcollections%2fhandwoven-ikat-dupatta-in-cotton.jpg%3fv%3d1723541167&ehk=jA7Nvwm4amtAitzyrM0IuFaSSo6AG450txcR0PGxNDQ%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Terracotta Pot">
+                <h3>three coloured cotton dupatta</h3>
+                <p>handwoven cotton lkat dupatta .</p>
+                <span class="price">₹3550</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img
+                    src="https://medias.utsavfashion.com/media/catalog/product/cache/1/image/1000x/040ec09b1e35df139433887a97daa66f/b/r/brj224.jpg">
+                <h3>Bandhani dupatta</h3>
+                <p>bandhani printed cotton dupatta in pink.</p>
+                <span class="price">₹6,000</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/R.339dac0da25ace335f8250947946afac?rik=dYO5ObGsXuntgA&riu=http%3a%2f%2fcdn.shopify.com%2fs%2ffiles%2f1%2f1746%2f5485%2ffiles%2fDupatta_2048x2048.jpg%3fv%3d1572691401&ehk=B%2b88xz%2fuqLuWmvr2CxIysrQSdL%2bYPccx2HidT57%2bjoU%3d&risl=&pid=ImgRaw&r=0"
+                    alt="Wooden Tribal Mask">
+                <h3>dark yellow dupatta</h3>
+                <p>trending style in bandhani dupatta.</p>
+                <span class="price">₹5100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.C-WngOcev9BkZShQSQWuWgHaJ4?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Wooden Tribal Mask">
+                <h3>Gaji silk pink bandhani dupatta</h3>
+                <p>pink traditional bandhani dupatta in gaji silk.</p>
+                <span class="price">₹5,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.1aEgcxVP-YqPr5wteaeY9AHaHo?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Wooden Tribal Mask">
+                <h3>phulkari dupatta.</h3>
+                <p>red phulkari dupatta with kantha embroidery.</p>
+                <span class="price">₹6,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.SDNCPKEL40_hrX7HSHlgaQAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Wooden Tribal Mask">
+                <h3>kalamkari dupatta</h3>
+                <p> dupatta with trible design kalamkari work.</p>
+                <span class="price">₹7,00</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="end">
+        <h2>© 2025. All Rights Are Reserved By The_Glitchhunter.</h2>
+    </div>
+
+    <script src="product.js"></script>
+
+</html>

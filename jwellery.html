@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jwellery</title>
+    <link rel="icon" type="img/jpg" href="LOGO.M.png">
+    <style>
+ body{
+    font-family: sans-serif;
+    background-color: #f6e6d3;
+}
+
+::-webkit-scrollbar {
+            width: 12px;
+            height: 12px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #e3b4ad;
+            /* Light grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #a45e54;
+            /* Dark grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        /* Change the thumb on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #50312d;
+            /* Darker grey */
+        }
+
+header{
+    background-color: #4b2e2a;
+    margin: -8px;
+}
+
+header img{
+    width: 100px;
+}
+
+.logo{
+    display: flex;
+}
+
+.text{
+    text-align: center;
+    color: #f6e6d3;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #5a3e2b;
+}
+
+.scroll-container{
+  margin: auto;
+  width: 86%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: floralwhite;
+  box-shadow: 0 0 10px #4b2e2a;
+  margin-top: 100px;
+}
+
+.con {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #5a3e2b #f0e8dd;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-container::-webkit-scrollbar-track {
+  background: #f0e8dd;
+  border-radius: 10px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #5a3e2b;
+  border-radius: 10px;
+}
+
+.product-card {
+  min-width: 200px;
+  max-width: 220px;
+  background: #fff;
+  border: 2px solid #d4b483;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px gray;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.product-card img {
+  width: 100%;
+  height: 200px;   
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  color: #5a3e2b;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.product-card .price {
+  display: block;
+  font-weight: bold;
+  color: #b33c00;
+  font-size: 16px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  background: #fdf7f0;
+}
+
+.scroll-container h2{
+  margin-top: -2px;
+  margin-bottom: 1px;
+  margin-left: 10px;
+}
+
+.cart{
+  border: 1px solid #4b2e2a;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #4b2e2a;
+  color: white;
+}
+
+.after-cart{
+  background-color: green;
+}
+
+.cart:hover{
+  cursor: pointer;
+}
+
+.end {
+    background-color: #4b2e2a;
+    color: #f6e6d3;
+    padding: 10px;
+    text-align: center;
+    margin: -8px;
+    margin-top: 50px;
+}
+
+.end p {
+    padding: 10px;
+}
+
+
+@media (max-width: 1024px) {
+  .section-title { font-size: 24px; }
+  header img { width: 80px; }
+  .scroll-container { width: 92%; padding: 18px; margin-top: 80px; }
+  .product-card { min-width: 180px; max-width: 200px; }
+  .product-card img { height: 170px; } 
+}
+
+
+@media (max-width: 768px) {
+  .logo { align-items: center; gap: 10px; }
+  header img { width: 70px; }
+  .section-title { font-size: 22px; }
+  .scroll-container { width: 95%; padding: 16px; margin-top: 60px; }
+  .con { gap: 14px; padding: 8px 0; }
+  .product-card { min-width: 170px; max-width: 190px; padding: 9px; }
+  .product-card img { height: 150px; } 
+  .product-card h3 { font-size: 16px; }
+  .product-card p { font-size: 13px; }
+}
+
+
+@media (max-width: 480px) {
+  .logo { flex-direction: column; text-align: center; }
+  header img { width: 60px; margin: 8px auto; }
+  .text { padding: 6px 8px; }
+
+  .scroll-container { width: calc(100% - 20px); padding: 12px; margin-top: 40px; }
+  .section-title { font-size: 20px; margin-bottom: 10px; }
+
+  .con { gap: 12px; padding: 6px 0; }
+  .product-card { min-width: 150px; max-width: 180px; padding: 8px; }
+  .product-card img { height: 130px; } 
+  .product-card h3 { font-size: 15px; }
+  .product-card p { font-size: 12px; }
+  .product-card .price { font-size: 15px; }
+
+  .cart { padding: 8px; font-size: 14px; }
+  .end { margin-top: 30px; }
+}
+
+
+@media (max-width: 360px) {
+  .product-card { min-width: 140px; max-width: 160px; }
+  .product-card img { height: 120px; } 
+  .section-title { font-size: 18px; }
+}
+
+@media (hover: none) {
+  .product-card { transform: none; }
+  .product-card:active { transform: scale(1.02); }
+}
+
+
+@media (max-width: 600px) {
+  .scroll-container::-webkit-scrollbar { height: 6px; }
+  .scroll-container::-webkit-scrollbar-thumb { border-radius: 6px; }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo2.png" alt="">
+            <div class="text">
+                <h1>Trivana Arts & Crafts</h1>
+                <p>"Where Heritage Meets the World."</p>
+            </div>
+        </div>
+    </header>
+    
+    <div class="scroll-container">
+        <h2>Neckless</h2><hr>
+        <div class="con">
+            
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmmbfPIYCNeIY04o1Ln5umpyDktm--3J-2Cg&s"
+                    alt="Handmade Bamboo Basket">
+                <h3>Ethnic Square Pendant Necklace</h3>
+                <p>Boho square pendant necklace for a bold ethnic look.</p>
+                <span class="price">₹450</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.etsystatic.com/25758102/c/2000/2000/500/0/il/38ce11/4946835631/il_600x600.4946835631_o8a2.jpg" alt="Warli Tribal Painting">
+                <h3>Red Tribal art Bead Necklace</h3>
+                <p>Vibrant red beads paired with a rustic brass pendant for a bold.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://i.etsystatic.com/25758102/c/2171/1725/398/74/il/2eeb8c/4139523177/il_340x270.4139523177_2nju.jpg
+" alt="Terracotta Pot">
+                <h3>Rustic Boho Leather Tassel Earrings</h3>
+                <p>Earthy statement earrings for everyday style.</p>
+                <span class="price">₹650</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://i.etsystatic.com/25758102/c/2000/2000/500/0/il/f71170/4093366036/il_300x300.4093366036_5970.jpg
+" alt="Bead Necklace">
+                <h3>Earthy Agate & Wood Bead Bracelet</h3>
+                <p>Natural agate tones with rustic wood beads — a warm, grounded.</p>
+                <span class="price">₹350</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.Ew2rXwMwVksOmBI0pQo3wwHaLH?rs=1&pid=ImgDetMain&o=7&rm=3
+" alt="Wooden Tribal Mask">
+                <h3>Sun Relief Eyewear Shades</h3>
+                <p>Timeless sunglasses: sleek, protective, and effortlessly cool.</p>
+                <span class="price">₹100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.kRB6d7bDxnrace13O7fMhAHaHa?pid=ImgDet&w=192&h=192&c=7&o=7&rm=3" alt="Wooden Tribal Mask">
+                <h3>Patina Sand Dollar Pendant Necklace</h3>
+                <p>A weathered sea-inspired charm on soft leather — subtle coastal style.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.xwt6JzEvupLkbPxiWu5TpgHaIX?w=187&h=210&c=7&r=0&o=7&pid=1.7&rm=3
+" alt="Wooden Tribal Mask">
+                <h3>Tribal Bead Choker Necklace</h3>
+                <p>Earthy mix of beads and tribal motifs — perfect for a raw boho touch.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.di7BXjU2uU-sFd3n-gKNIgHaME?w=128&h=209&c=7&r=0&o=5&pid=1.7
+" alt="Wooden Tribal Mask">
+                <h3>Turquoise Beaded Minimalist Necklace</h3>
+                <p>Delicate beads + turquoise tones = everyday elegance.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="scroll-container">
+        <h2>Bangles</h2><hr>
+        <div class="con">
+
+            <div class="product-card">
+                <img src="https://1.bp.blogspot.com/_jA2jmhONzdM/TJDMTQoVx-I/AAAAAAAAAcY/MBivL377hUY/s320/African+Tribal+Bangle+1.jpg"
+                    alt="Handmade Bamboo Basket">
+                <h3>African Tribal Bangle</h3>
+                <p>Bold brass-tone cuff with tribal textures — wear it alone or stacked.</p>
+                <span class="price">₹2500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.qGy6hzZWZY2IQwpXyH3ibQHaHa?w=182&h=182&c=7&r=0&o=7&pid=1.7&rm=3" alt="Warli Tribal Painting">
+                <h3>Ethnic Wood & Metal Drop Pendant Necklace</h3>
+                <p>Natural wood meets hammered metal — warm tones and tribal vibes.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://i.etsystatic.com/19946154/r/il/a93bf9/4421157130/il_794xN.4421157130_mxsv.jpg" alt="Terracotta Pot">
+                <h3>Ornate Tribal Silver Bangles</h3>
+                <p>Vintage silver-tone bangles with intricate dot and swirl detailing — timeless and bold.</p>
+                <span class="price">₹3550</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.WU7h5hgB5iQ-e8LfweCg6wHaJ4?w=150&h=200&c=7&r=0&o=7&pid=1.7&rm=3
+" alt="Bead Necklace">
+                <h3>Boho Layered Necklace with Shell & Pendant Charm</h3>
+                <p>Beachy shells + boho pendant = the perfect layered summer vibe.</p>
+                <span class="price">₹1350</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+   
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.tmfpjrKrLHMgl6_6Bw3MSwHaJ4?w=154&h=205&c=7&r=0&o=5&pid=1.7" alt="Wooden Tribal Mask">
+                <h3>Colorful Beaded Cuffs</h3>
+                <p>A vibrant collection of beaded cuff bracelets showcasing bold patterns and bright colors perfect for adding personality to any outfit.</p>
+                <span class="price">₹3100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.etsystatic.com/20247544/r/il/2ee881/4012661890/il_570xN.4012661890_cinq.jpg
+" alt="Wooden Tribal Mask">
+                <h3>Antique Mixed-Metal Statement Bangles</h3>
+                <p>Ornate silver and golden bangles with intricate floral and filigree designs merging traditional elegance with  wearable art.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://th.bing.com/th/id/OIP.cczWBYM0VcDiUxemdrF_BgHaFj?w=243&h=182&c=7&r=0&o=7&pid=1.7&rm=3
+" alt="Wooden Tribal Mask">
+                <h3>Rustic Tribal Neckpiece</h3>
+                <p>Handcrafted necklace with earthy textures and tribal accents — a perfect blend of raw elegance and bohemian style.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src=" https://th.bing.com/th/id/OIP.lZHXEbh97OsKOdBKsXFdeQHaJ4?w=136&h=182&c=7&r=0&o=7&pid=1.7&rm=3
+" alt="Wooden Tribal Mask">
+                <h3>Delicate Leaf Drop Earring</h3>
+                <p>A dainty earring featuring a graceful leaf drop — simple yet elegant for everyday wear.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    <div class="end">
+       <h2>© 2025. All Rights Are Reserved By The_Glitchhunter.</h2>
+    </div>
+    <script src="product.js"></script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivana Arts & Crafts</title>
+    <link rel="icon" type="img/png" href="LOGO.M.png">
+    <style>
+        body {
+    font-family: sans-serif;
+    background-color: #f6e6d3;
+}
+
+header {
+    border: 2px solid #4b2e2a;
+    background-color: #4b2e2a;
+    margin: -8px;
+    display: flex;
+    z-index: 1000;
+    top: 0;
+    position: sticky;
+}
+
+.left {
+    display: flex;
+}
+
+.left img {
+    width: 100px;
+    margin: 10px;
+}
+
+.text {
+    text-align: center;
+    color: #f6e6d3;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.mid {
+    display: block;
+    margin: auto;
+}
+
+.mid a {
+    color: #f6e6d3;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 10px;
+    outline: none;
+}
+
+.right{
+    text-align: center;
+    margin-top: 13px;
+}
+
+.right img {
+    width: 40px;
+    border-radius: 20px;
+    margin: 10px;
+    margin-right: 20px;
+}
+
+.right p a {
+    color: #f6e6d3;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 7px;
+}
+
+.right p {
+    margin-top: 1px;
+    text-align: center;
+    margin-right: 7px;
+}
+
+.con {
+    width: auto;
+    height: 600px;
+    /* overflow: hidden;
+    position: relative; */
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin-top: 8px;
+    margin-left: -8px;
+    margin-right: -8px;
+    background: url(peluche\ per\ bambini\ 4x\ eliminate\ parti_\ 2.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.con img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover;
+    display: none;
+    position: absolute; */
+    top: 0;
+    left: 0;
+}
+
+/* .con img.active {
+    display: block;
+} */
+
+.artist {
+    width: 90%;
+    display: block;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+
+.artistcard {
+    border: 1px solid white;
+    background-color: white;
+    margin: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+}
+
+.artistcard img {
+    width: 290px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.artistcard h3 {
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.artistcard p {
+    color: gray;
+    margin-left: 10px;
+    margin-top: -14px;
+    text-decoration: none;
+}
+
+.artistcard h4 {
+    color: #e05e41;
+    margin-left: 10px;
+    margin-top: -14px;
+    text-decoration: none;
+}
+
+.flex {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
+.cat {
+    border: 2px solid black;
+    width: 100%;
+    background-color: #4b2e2a;
+    color: white;
+}
+
+.categories a {
+    color: white;
+    font-size: 20px;
+}
+
+.categories {
+    display: block;
+    margin: auto;
+}
+
+.main {
+    font-size: 25px;
+}
+
+.cen {
+    display: flex;
+    margin: -8px;
+}
+
+.product {
+    border: 2px solid #f6e6d3;
+    border-radius: 10px;
+    width: 90%;
+    display: block;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: white;
+}
+
+.product h3 {
+    margin-left: 10px;
+}
+
+.product p {
+    margin-left: 10px;
+    margin-top: -8px;
+}
+
+.productcard {
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    width: 300px;
+    padding: 5px;
+    display: block;
+    margin: auto;
+    background-color: #4b2e2a;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.productcard img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.middle {
+    display: flex;
+}
+
+.productcard a {
+    color: #f6e6d3;
+    text-align: center;
+}
+
+.productcard a p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.end {
+    background-color: #4b2e2a;
+    color: #f6e6d3;
+    padding: 10px;
+    text-align: center;
+    margin: -8px;
+}
+
+.end p {
+    padding: 10px;
+}
+
+.about-us {
+    /* background: #faf6f0; */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.8;
+    color:#f6e6d3;
+    text-shadow: 0 0 10px white;
+}
+
+.about-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #5a3e1b;
+    font-family: 'Georgia', serif;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    margin: 15px 0;
+}
+
+.about-image {
+    margin: 30px 0;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 100px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px white;
+    margin-bottom: 1px;
+}
+
+/* ========================= */
+/* Responsive Adjustments    */
+/* ========================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mid {
+        margin: 10px 0;
+    }
+
+    .flex, 
+    .middle, 
+    .cen {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .artistcard, 
+    .productcard {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .artistcard img,
+    .productcard img {
+        width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .left img {
+        width: 70px;
+        margin: 5px;
+    }
+
+    .mid a {
+        display: block;
+        margin: 8px 0;
+        font-size: 18px;
+    }
+
+    .right img {
+        width: 30px;
+        margin: 5px;
+    }
+
+    .about-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-container p {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+.artist h2{
+    text-align: center;
+    color: #4b2e2a;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <img src="logo3.png" alt="">
+            <div class="text" style="margin-top: 15px;">
+                <h2>Trivan Art&Crafts</h2>
+                <p>“Where Heritage Meets the World."</p>
+            </div>
+        </div>
+
+        <div class="mid">
+            <a href="">Home</a>
+            <a href="#Product">Marketplace</a>
+            <a href="#artist">Explore Artisans</a>
+            <a href="#About">About Us</a>
+        </div>
+
+        <div class="right">
+            <img src="profile.jpg"alt="">
+            <p><a href="asking.html">Change User</a></p>
+        </div>
+    </header>
+    <!-- <div class="con">
+         <img src="slide 1.jpg"alt=""> 
+         <img src="slide 2.png"alt="slide1" class="active"> 
+         <img src="slide 3.webp" alt="slide3">
+         <img src="slide 4.jpg"alt="slide4"> 
+         <img src="slide 5.webp"alt=""> 
+         <img src="slide 6.webp" alt="">
+        <img src="peluche per bambini 4x eliminate parti_ 2.jpg" alt="">
+    </div> -->
+
+    <div class="con">
+        <section id="About" class="about-us">
+  <div class="about-container">
+    <h2>About Us</h2>
+    <p>
+      <strong>Trivana</strong>, a platform dedicated to celebrating the rich 
+      heritage of tribal arts and crafts. Our mission is to connect local artisans which are skilled
+      with the world, Showcasing their unique craftsmanship that has been passed 
+      down through generations.
+    </p>
+    <p>
+      We work closely with tribal communities to preserve their traditions, provide 
+      fair trade opportunities, and bring authentic handmade products directly 
+      to your home.
+    </p>
+
+    <div class="about-image">
+      <img src="end2.jpg" alt="Tribal Arts and Crafts">
+    </div>
+
+    <p>
+      Every product tells a story — a story of culture, tradition, and creativity. 
+      By supporting us, you are empowering artisans and helping preserve cultural 
+      legacies for future generations.
+    </p>
+  </div>
+</section>
+
+    </div>
+
+    <!-- <div class="head">
+        <h1>Artists</h1>
+    </div> -->
+
+    <div id="artist" class="artist">
+        <h2>Meet Some Tribal Artist</h2>
+        <div class="flex">
+            <div class="name">
+            </div>
+            <div class="artistcard">
+                <a href="https://en.wikipedia.org/wiki/Jangarh_Singh_Shyam">
+                    <img src="https://indiaartfair.in/app/uploads/2021/04/Jangarh-Singh-Shyam.-A-portrait-of-the-artist-1998.-Courtesy-of-the-Crafts-Museum.-jpg-scaled.jpg"
+                        alt="">
+                    <h3>Jangarh Singh Shyam</h3>
+                    <h4>*Gond Artist</h4>
+                    <p class="about">was a pioneering contemporary Indian painter credited with being the creator of a
+                        new
+                        school of Indian art called Jangarh Kalam</p>
+                </a>
+            </div>
+
+            <div class="artistcard">
+                <a href="https://en.wikipedia.org/wiki/Bhuri_Bai">
+                    <img src="https://th.bing.com/th/id/R.da2ff4a2453a1344a6805e729df70b6b?rik=uXgTRpvahtRTlQ&riu=http%3a%2f%2ftheartofindia.in%2fcdn%2fshop%2fcollections%2fb7-4-bhuri-bai_1024x.jpg%3fv%3d1648900406&ehk=GLDPSJ0xtxVvkgUwzWoq2LsCo231N8JiSMBjY%2fDCYIQ%3d&risl=&pid=ImgRaw&r=0"
+                        alt="">
+                    <h3>Bhuri Bai</h3>
+                    <h4>*Bhil Artist</h4>
+                    <p>Bhuri Bai is an Indian Bhil artist. She was born in Pitol village, situated on the border of
+                        Madhya Pradesh and Gujarat. Pitol is a village of Jhabua district in Madhya Pradesh.</p>
+                </a>
+            </div>
+
+            <div class="artistcard">
+                <a href="https://en.wikipedia.org/wiki/Lado_Bai">
+                    <img src="https://www.galleriesplash.com/backend/web/images/artists/webp/456751738490a8da29b2173b27f467bf.webp"
+                        alt="">
+                    <h3>Lado Bai</h3>
+                    <h4>*Bhil Artist</h4>
+                    <p>Lado Bai was born in the Badi Bawadi village of Jhabua, Madhya Pradesh in the Bhil tribal
+                        community.At a very early age, she moved to Bhopal with her family to be engaged as manual
+                        labourers in the building of the iconic Bharat Bhavan.</p>
+                </a>
+            </div>
+
+            <div class="artistcard">
+                <a href="https://gondart-india.com/en/artists/mayank_shyam/">
+                    <img src="https://gondart-india.com/wp-content/uploads/2021/05/3_MayankShaym.jpg" alt="">
+                    <h3>Mayank Shyam</h3>
+                    <h4>*Santhal Artist</h4>
+                    <p>Mayank was born in Bhopal in 1987. Mayank is the eldest son of Jangarh Singh Shyam, and learned
+                        painting under him from a young age. He has participated in many exhibitions and art camps in
+                        India and abroad. Inheriting his father’s talent, Mayank is cultivating his own style, and is
+                        also recognised as a contemporary artist. In addition to works based on Gond mythology and
+                        perception of nature, he also works on modern themes as an artist who grew up in the city.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="Product" class="product">
+        <h3>Marketplace</h3>
+        <p>Shop authentic tribal art and crafts — paintings, jewelry, textiles, and more.</p>
+        <hr>
+        <div class="middle">
+            <div class="productcard">
+                <a href="potterys.html">
+                <img src="https://t4.ftcdn.net/jpg/16/37/63/61/360_F_1637636101_pUEL9D5LmkFW5vwVj9pkGNl96CbGC4iQ.jpg" alt="">
+                <p> Potterys</p>
+                </a>
+            </div>
+
+            <div class="productcard">
+                <a href="painting.html">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjh2Vff_j1TSFDro0OJYd-JX8a0_VMd8_C9A23Vcr16_Jdfarv9NiJQr6kgdMpG7e-bTTM9o2a9nBz1Z1OA39ojRIQyuXcWZYRP2cZEG8aRtCKBgaTYYSIQ_ZvxCapzXe1SNA8NJNO5dDxz/w400-h268/image.png" alt="" style="height: 170px;">
+                <p> Paintings</p>
+                </a>
+            </div>
+
+            <div class="productcard">
+                <a href="leather.html">
+                <img src="https://gaatha.org/wp-content/uploads/design_5-4.jpg" alt="">
+                <p> Leather Work</p>
+                </a>
+            </div>
+
+            <div class="productcard">
+                <a href="jwellery.html">
+                <img src="https://i.etsystatic.com/15703488/r/il/a83368/2941499172/il_570xN.2941499172_tn9h.jpg" alt="" style="height: 170px;">
+                <p> Jewellery</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="middle">
+            <div class="productcard">
+                <a href="men wears.html">
+                <img src="https://www.yogicposhak.com/cdn/shop/products/DSC7519.jpg?v=1668960260" alt="" style="height: 170px;">
+                <p> Mensware</p>
+                </a>
+            </div>
+
+            <div class="productcard">
+                <a href="Women  ware.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc_ZpbZe_dN48f7_wFjJPStT4ige3Ywd-FbWqX7NQkYvwhiqyaqpo5nZ0wLvwispi1Lw0&usqp=CAU" alt="" style="height: 170px;" >
+                <p> Womenware</p>
+                </a>
+            </div>
+
+            <div class="productcard">
+                <a href="home decor.html">
+                <img src="https://i.etsystatic.com/26584585/r/il/b6a34f/3522886504/il_340x270.3522886504_941n.jpg" alt="" style="height: 170px;" >
+                <p>Home Decore</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- <section id="About" class="about-us">
+  <div class="about-container">
+    <h2>About Us</h2>
+    <p>
+      <strong>Trivana</strong>, a platform dedicated to celebrating the rich 
+      heritage of tribal arts and crafts. Our mission is to connect local artisans which are skilled
+      with the world, Showcasing their unique craftsmanship that has been passed 
+      down through generations.
+    </p>
+    <p>
+      We work closely with tribal communities to preserve their traditions, provide 
+      fair trade opportunities, and bring authentic handmade products directly 
+      to your home.
+    </p>
+
+    <div class="about-image">
+      <img src="end2.jpg" alt="Tribal Arts and Crafts">
+    </div>
+
+    <p>
+      Every product tells a story — a story of culture, tradition, and creativity. 
+      By supporting us, you are empowering artisans and helping preserve cultural 
+      legacies for future generations.
+    </p>
+  </div>
+</section> -->
+
+
+    <div class="end">
+        <h2>© 2025. All Rights Are Reserved By The_Glitchhunter.</h2>
+    </div>
+    <!-- <script src="/Trivanabuyer.js"></script> -->
+</body>
+
+</html>

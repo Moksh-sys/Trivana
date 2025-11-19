@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Decores</title>
+    <link rel="icon" type="img/png" href="LOGO.M.png">
+    <style>
+ body{
+    font-family: sans-serif;
+    background-color: #f6e6d3;
+}
+
+::-webkit-scrollbar {
+            width: 12px;
+            height: 12px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #e3b4ad;
+            /* Light grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #a45e54;
+            /* Dark grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        /* Change the thumb on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #50312d;
+            /* Darker grey */
+        }
+
+header{
+    background-color: #4b2e2a;
+    margin: -8px;
+}
+
+header img{
+    width: 100px;
+}
+
+.logo{
+    display: flex;
+}
+
+.text{
+    text-align: center;
+    color: #f6e6d3;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #5a3e2b;
+}
+
+.scroll-container{
+  margin: auto;
+  width: 86%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: floralwhite;
+  box-shadow: 0 0 10px #4b2e2a;
+  margin-top: 100px;
+}
+
+.con {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #5a3e2b #f0e8dd;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-container::-webkit-scrollbar-track {
+  background: #f0e8dd;
+  border-radius: 10px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #5a3e2b;
+  border-radius: 10px;
+}
+
+.product-card {
+  min-width: 200px;
+  max-width: 220px;
+  background: #fff;
+  border: 2px solid #d4b483;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px gray;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ✅ All images same size */
+.product-card img {
+  width: 100%;
+  height: 200px;   /* desktop default */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  color: #5a3e2b;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.product-card .price {
+  display: block;
+  font-weight: bold;
+  color: #b33c00;
+  font-size: 16px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  background: #fdf7f0;
+}
+
+.scroll-container h2{
+  margin-top: -2px;
+  margin-bottom: 1px;
+  margin-left: 10px;
+}
+
+.cart{
+  border: 1px solid #4b2e2a;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #4b2e2a;
+  color: white;
+}
+.after-cart{
+  background-color: green;
+
+}
+
+.cart:hover{
+  cursor: pointer;
+}
+
+.end {
+    background-color: #4b2e2a;
+    color: #f6e6d3;
+    padding: 10px;
+    text-align: center;
+    margin: -8px;
+    margin-top: 50px;
+}
+
+.end p {
+    padding: 10px;
+}
+
+/* ---------------- Responsive additions (do not change class names) ---------------- */
+
+/* Large tablets / small desktops */
+@media (max-width: 1024px) {
+  .section-title { font-size: 24px; }
+  header img { width: 80px; }
+  .scroll-container { width: 92%; padding: 18px; margin-top: 80px; }
+  .product-card { min-width: 180px; max-width: 200px; }
+  .product-card img { height: 170px; } /* ✅ same size on tablet */
+}
+
+/* Tablets / landscape phones */
+@media (max-width: 768px) {
+  .logo { align-items: center; gap: 10px; }
+  header img { width: 70px; }
+  .section-title { font-size: 22px; }
+  .scroll-container { width: 95%; padding: 16px; margin-top: 60px; }
+  .con { gap: 14px; padding: 8px 0; }
+  .product-card { min-width: 170px; max-width: 190px; padding: 9px; }
+  .product-card img { height: 150px; } /* ✅ same size on landscape phones */
+  .product-card h3 { font-size: 16px; }
+  .product-card p { font-size: 13px; }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .logo { flex-direction: column; text-align: center; }
+  header img { width: 60px; margin: 8px auto; }
+  .text { padding: 6px 8px; }
+
+  .scroll-container { width: calc(100% - 20px); padding: 12px; margin-top: 40px; }
+  .section-title { font-size: 20px; margin-bottom: 10px; }
+
+  .con { gap: 12px; padding: 6px 0; }
+  .product-card { min-width: 150px; max-width: 180px; padding: 8px; }
+  .product-card img { height: 130px; } /* ✅ same size on small phones */
+  .product-card h3 { font-size: 15px; }
+  .product-card p { font-size: 12px; }
+  .product-card .price { font-size: 15px; }
+
+  .cart { padding: 8px; font-size: 14px; }
+  .end { margin-top: 30px; }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+  .product-card { min-width: 140px; max-width: 160px; }
+  .product-card img { height: 120px; } /* ✅ same size on very small screens */
+  .section-title { font-size: 18px; }
+}
+
+/* Accessibility: increase hit area for product cards on touch devices */
+@media (hover: none) {
+  .product-card { transform: none; }
+  .product-card:active { transform: scale(1.02); }
+}
+
+/* Scrollbar tweaks for small screens */
+@media (max-width: 600px) {
+  .scroll-container::-webkit-scrollbar { height: 6px; }
+  .scroll-container::-webkit-scrollbar-thumb { border-radius: 6px; }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo2.png" alt="">
+            <div class="text">
+                <h1>Trivana Arts & Crafts</h1>
+                <p>"Where Heritage Meets the World."</p>
+            </div>
+        </div>
+    </header>
+    <!-- <h2 class="section-title">Explore Trivana Crafts</h2> -->
+    <!-- <h2 class="section-title">Explore Trivana Crafts</h2> -->
+    <div class="scroll-container">
+        <h2>Wall Hanging</h2><hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71lMYLu7nYL.jpg"
+                    alt="Boho Wooden Dreamcatcher Wall Hanging">
+                <h3>Boho Wooden Dreamcatcher Wall Hanging</h3>
+                <p>Handcrafted wooden dreamcatcher with beads and feather detailing — adds a rustic, bohemian touch to your space.</p>
+                <span class="price">₹450</span>
+                <p class="cart" onclick="addtocart()" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC3MRQXrYePiSqNI9cdYm9d3IlTDfMWbz-Ao_nc0Yu1oAW7I7cvCN0vYtJ1P8rgZqhT2I&usqp=CAU
+" alt="Warli Tribal Painting">
+                <h3>Textured Beaded Bracelet Trio</h3>
+                <p>Three earthy bracelets featuring a mix of wood and beads — natural tones, rustic vibes.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" onclick="addtocart()" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv4z90gHVx3E38WzjA93JZajk2SaXcREeA1A0CyyfJ9LlyWg2kYUu9Ge3MMZ9qWEIN1nA&usqp=CAU
+" alt="Terracotta Pot">
+                <h3>Beaded Wood & Leather Wrap Bracelet</h3>
+                <p>Earthy tones meet rustic charm — a layered wrap bracelet blending wood beads with leather.</p>
+                <span class="price">₹650</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/8/UY/XZ/VA/10335434/wrought-iron-tribal-hyandicrafts-wall-home-decor-500x500.JPG
+" alt="Bead Necklace">
+                <h3>Tribal Wrought-Iron Wall Panel</h3>
+                <p>Bold iron work with tribal motifs — rugged texture, cultural flair for your walls.</p>
+                <span class="price">₹350</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://images-eu.ssl-images-amazon.com/images/I/710O6VKYWBL._AC_UL495_SR435,495_.jpg
+" alt="Wooden Tribal Mask">
+                <h3>Classic Tan Leather Satchel</h3>
+                <p>Sleek tan leather bag with brass hardware — timeless style for work or weekend.</p>
+                <span class="price">₹100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsUzX7_-QOO_mL1lwvptAUGWzQ5P2hJU5oMV-S_gnXfJb8c33e7thvttIDGPN3FWZccf4&usqp=CAU
+" alt="Wooden Tribal Mask">
+                <h3>Earthy Beaded Wrap Bracelet</h3>
+                <p>Layered wrap bracelet combining natural wood beads and leather for a rugged, boho look.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2022/8/XB/IP/HI/10335434/pkek0835-500x500.JPG
+" alt="Wooden Tribal Mask">
+                <h3>Tribal Metal Wall Hanging</h3>
+                <p>Handcrafted wrought-iron wall décor with traditional tribal motifs — perfect for adding cultural charm to your home.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61ZwWySbHgL._AC_UY1100_.jpg
+" alt="Wooden Tribal Mask">
+                <h3>Decorative Metal Wall Hanging</h3>
+                <p>Elegant wall décor piece with intricate patterns — adds charm and artistry to any space.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="scroll-container">
+        <h2>Matress</h2><hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/91fFjhwvl6L._UF894,1000_QL80_.jpg"
+                    alt="Handmade Bamboo Basket">
+                <h3>Printed Cotton Bed Sheet</h3>
+                <p>Soft and stylish design for a cozy bedroom look.</p>
+                <span class="price">₹2500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhyTwN4JeMWU0N8S5c-BsqDUW0mINWOqW18sF78B_DS3NHfsJIORibUjRX1HMDoE3HKTU&usqp=CAU
+" alt="Warli Tribal Painting">
+                <h3>Floral Pattern Bed Sheet Set</h3>
+                <p>A breezy floral print that brings a fresh, serene vibe to your bedroom.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcaoJ8eHbDY8kTbQpAbLh8VYPA7uvc1myZwQ&s
+" alt="Terracotta Pot">
+                <h3>Abstract Geometric Bed Sheet</h3>
+                <p>A bold geometric design with contrasting tones to add vibrant style to your bed.</p>
+                <span class="price">₹3550</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDQQHQmAQBAXz2hdCrvWkhUCdKViPD1DNq_8D3DWsnFttJhn0DCOfsJjexZc4py4HBr-U&usqp=CAU" alt="Bead Necklace">
+                <h3>Paisley Print Bed Sheet</h3>
+                <p>Intricate paisley motifs in soft tones give this sheet a classic, elegant charm.</p>
+                <span class="price">₹1350</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKYjrlKev5dHJ0Z45IW_Q5BKKv5jITpp6tuFdFzoKXpYspDkVUiq0IEBnAqek-kD9iTxE&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>Subtle Damask Bed Sheet</h3>
+                <p>Elegant damask motifs with soft contrast give this sheet a refined look that adds warmth and character to any bedroom.</p>
+                <span class="price">₹3100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS79Cerg2tFavNWL4AStVDuf5MpchwWCE4JEBdXtsxKNMfirIq_mTlwR2ItXmDHxoxHJAE&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>Minimalist Border Bed Sheet</h3>
+                <p>Clean contrast border adds a touch of sophistication to this simple yet stylish bedsheet design.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqX6fjs-VRIUyPV7D5zQBGUm5jd-Mrl_vVk3bi9xv-Fdb2Q0Ras1Mkr7gKWWCVic_pXjE&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>Tropical Leaf Print Bed Sheet</h3>
+                <p> Bold green tropical leaves on a crisp background bring the freshness of nature right into your bedroom.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.etsystatic.com/24452648/r/il/125f7f/6339728679/il_fullxfull.6339728679_slk2.jpg" alt="Wooden Tribal Mask">
+                <h3>Boho Medallion Cotton Bed Sheet</h3>
+                <p>Hand-block printed with a bold medallion motif that brings a warm, artistic touch to your bedroom.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="end">
+       <h2>© 2025. All Rights Are Reserved By The_Glitchhunter.</h2>
+    </div>
+    <script src="product.js"></script>
+</body>
+</html>

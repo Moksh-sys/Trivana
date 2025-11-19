@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leather Works</title>
+    <link rel="icon" type="img/png" href="LOGO.M.png">
+    <style>
+   body{
+    font-family: sans-serif;
+    background-color: #f6e6d3;
+}
+
+::-webkit-scrollbar {
+            width: 12px;
+            height: 12px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #e3b4ad;
+            /* Light grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #a45e54;
+            /* Dark grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        /* Change the thumb on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #50312d;
+            /* Darker grey */
+        }
+
+header{
+    background-color: #4b2e2a;
+    margin: -8px;
+}
+
+header img{
+    width: 100px;
+}
+
+.logo{
+    display: flex;
+}
+
+.text{
+    text-align: center;
+    color: #f6e6d3;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #5a3e2b;
+}
+
+.scroll-container{
+  margin: auto;
+  width: 86%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: floralwhite;
+  box-shadow: 0 0 10px #4b2e2a;
+  margin-top: 100px;
+}
+
+.con {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #5a3e2b #f0e8dd;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-container::-webkit-scrollbar-track {
+  background: #f0e8dd;
+  border-radius: 10px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #5a3e2b;
+  border-radius: 10px;
+}
+
+.product-card {
+  min-width: 200px;
+  max-width: 220px;
+  background: #fff;
+  border: 2px solid #d4b483;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px gray;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.product-card img {
+  width: 100%;
+  height: 200px;   
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  color: #5a3e2b;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.product-card .price {
+  display: block;
+  font-weight: bold;
+  color: #b33c00;
+  font-size: 16px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  background: #fdf7f0;
+}
+
+.scroll-container h2{
+  margin-top: -2px;
+  margin-bottom: 1px;
+  margin-left: 10px;
+}
+
+.cart{
+  border: 1px solid #4b2e2a;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #4b2e2a;
+  color: white;
+}
+
+.after-cart{
+  background-color: green;
+}
+
+.cart:hover{
+  cursor: pointer;
+}
+
+.end {
+    background-color: #4b2e2a;
+    color: #f6e6d3;
+    padding: 10px;
+    text-align: center;
+    margin: -8px;
+    margin-top: 50px;
+}
+
+.end p {
+    padding: 10px;
+}
+
+
+@media (max-width: 1024px) {
+  .section-title { font-size: 24px; }
+  header img { width: 80px; }
+  .scroll-container { width: 92%; padding: 18px; margin-top: 80px; }
+  .product-card { min-width: 180px; max-width: 200px; }
+  .product-card img { height: 170px; } 
+}
+
+
+@media (max-width: 768px) {
+  .logo { align-items: center; gap: 10px; }
+  header img { width: 70px; }
+  .section-title { font-size: 22px; }
+  .scroll-container { width: 95%; padding: 16px; margin-top: 60px; }
+  .con { gap: 14px; padding: 8px 0; }
+  .product-card { min-width: 170px; max-width: 190px; padding: 9px; }
+  .product-card img { height: 150px; } 
+  .product-card h3 { font-size: 16px; }
+  .product-card p { font-size: 13px; }
+}
+
+
+@media (max-width: 480px) {
+  .logo { flex-direction: column; text-align: center; }
+  header img { width: 60px; margin: 8px auto; }
+  .text { padding: 6px 8px; }
+
+  .scroll-container { width: calc(100% - 20px); padding: 12px; margin-top: 40px; }
+  .section-title { font-size: 20px; margin-bottom: 10px; }
+
+  .con { gap: 12px; padding: 6px 0; }
+  .product-card { min-width: 150px; max-width: 180px; padding: 8px; }
+  .product-card img { height: 130px; } 
+  .product-card h3 { font-size: 15px; }
+  .product-card p { font-size: 12px; }
+  .product-card .price { font-size: 15px; }
+
+  .cart { padding: 8px; font-size: 14px; }
+  .end { margin-top: 30px; }
+}
+
+
+@media (max-width: 360px) {
+  .product-card { min-width: 140px; max-width: 160px; }
+  .product-card img { height: 120px; } 
+  .section-title { font-size: 18px; }
+}
+
+@media (hover: none) {
+  .product-card { transform: none; }
+  .product-card:active { transform: scale(1.02); }
+}
+
+
+@media (max-width: 600px) {
+  .scroll-container::-webkit-scrollbar { height: 6px; }
+  .scroll-container::-webkit-scrollbar-thumb { border-radius: 6px; }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo2.png" alt="">
+            <div class="text">
+                <h1>Trivana Arts & Crafts</h1>
+                <p>"Where Heritage Meets the World."</p>
+            </div>
+        </div>
+    </header>
+    <!-- <h2 class="section-title">Explore Trivana Crafts</h2> -->
+    <!-- <h2 class="section-title">Explore Trivana Crafts</h2> -->
+    <div class="scroll-container">
+        <h2>leather book</h2><hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/81yYkdMpaLL.jpg"
+                    alt="Handmade Bamboo Basket">
+                <h3>leather diary </h3>
+                <p>A beautifully handcrafted eco-friendly journal made by tribal artisans.</p>
+                <span class="price">₹999</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtmYl9IGjTaem2k79nDAgNJVhKS39ALVceUw&s" alt="Warli Tribal Painting">
+                <h3>Warli art leather diary </h3>
+                <p>a traditional handcrafted journal featuring tribal design.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN5cwt_YhB_ELOBzrBt-NS1nyNERWACtLa3w&s" alt="Terracotta Pot">
+                <h3>leather notebook</h3>
+                <p>handcrafted embossed notebook.</p>
+                <span class="price">₹650</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcgJfupca7GKVohWXY5JlHMh8Yk-wmBnb42g&s" alt="Bead Necklace">
+                <h3>leather book </h3>
+                <p>fish disign leatherbook .</p>
+                <span class="price">₹550</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/619L9RvzZdL.UF1000,1000_QL80.jpg" alt="Wooden Tribal Mask">
+                <h3>leather book</h3>
+                <p>wrapped in leather,written in passion.</p>
+                <span class="price">₹999</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjfY4xyaV5LNUx-LE8OvFqTad6zHTEBGgrNFo79UcrYVgBiubnearaB6avis8HbfJtpLc&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>leather notebook</h3>
+                <p>calssic leather book.</p>
+                <span class="price">₹1,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.ytimg.com/vi/X55HnM5-l00/hqdefault.jpg?v=60819f15" alt="Wooden Tribal Mask">
+                <h3>classic leather book</h3>
+                <p>stories age beautifully in leather.</p>
+                <span class="price">₹699</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/4/299417178/OK/TX/RB/40492493/alcraft-vintage-lapis-stone-crystal-black-leather-journal.jpg" alt="Wooden Tribal Mask">
+                <h3>leather notebook</h3>
+                <p>luxury leather book.</p>
+                <span class="price">₹999</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+         
+        </div>
+    </div>
+
+
+    <div class="scroll-container">
+        <h2>Leather Bag</h2><hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8e8l5B6uh5yEzgS6z3gpp6dhLs0xQCVdP5w&s"
+                    alt="Handmade Bamboo Basket">
+                <h3>leather purse</h3>
+                <p>Gallop into style with unique handcrafted charm.</p>
+                <span class="price">₹2500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://shop.gaatha.com/image/cache/catalog/Mohan-Lalji/15_11_2021/Leather-Sling-Bag-%E2%8C%98-3-600x315h.jpg" alt="Warli Tribal Painting">
+                <h3>treditional leather handbags</h3>
+                <p>carry a piece of art handbags.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi0Y6dLp9zOggfI52Y3MuCg-dMx4rTD7wOeg&s" alt="Terracotta Pot">
+                <h3>leather handbags</h3>
+                <p>browen leather handbags.</p>
+                <span class="price">₹3550</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://images.meesho.com/images/products/491212688/qgrbv_512.webp?width=512" alt="Bead Necklace">
+                <h3>multicolor traditional handbags</h3>
+                <p>handmake purse .</p>
+                <span class="price">₹1350</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/819YOOF2BJL.UY1000.jpg" alt="Wooden Tribal Mask">
+                <h3>aqua rhythm tote</h3>
+                <p>carry your essentials with style inspired by graceful moves.</p>
+                <span class="price">₹3100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/91SaDE0mNnL.UY1000.jpg" alt="Wooden Tribal Mask">
+                <h3>banjara handbag</h3>
+                <p>a treditional te showcasing.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://assets.myntassets.com/dpr_1.5,q_30,w_400,c_limit,fl_progressive/assets/images/25036758/2023/9/18/56534730-fbe1-44b9-ae64-a2c23b670aa51695048212236ARTNVINTAGENavyBlueAnimalEmbellishedLeatherHalfMoonSlingBagw1.jpg" alt="Wooden Tribal Mask">
+                <h3>vintage leather handbag.</h3>
+                <p> navyblue animal embellished slingbag.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrcWSbtrEwl_rhOmfsNQ5UabwKAbM1mHmm2g&s" alt="Wooden Tribal Mask">
+                <h3>priyaasi tribal naari handbag</h3>
+                <p>a vibrant tote bag featuring a digital print of three tribal women.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>       
+        </div>
+    </div>
+
+    <div class="scroll-container">
+        <h2>leather belt</h2><hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://i.etsystatic.com/12235498/r/il/12f8c7/4035802750/il_fullxfull.4035802750_6c15.jpg"
+                    alt="Handmade Bamboo Basket">
+                <h3>leather belt </h3>
+                <p>pure leather belt.</p>
+                <span class="price">₹2500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmhwAgHB_15zTFfQKwokZIbM8fJ4fh7q9d9g&s" alt="Warli Tribal Painting">
+                <h3>multidisigning belt</h3>
+                <p>designing belt .</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/51chkSFTxcL.UY350.jpg" alt="Terracotta Pot">
+                <h3>treditional design belt</h3>
+                <p>tribals art designing belt .</p>
+                <span class="price">₹3550</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://i.etsystatic.com/61061460/r/il/30cea3/7136472415/il_340x270.7136472415_m713.jpg" alt="Bead Necklace">
+                <h3>coloring leather belt </h3>
+                <p>coloring and treditional belt.</p>
+                <span class="price">₹1350</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2024/12/470948167/CN/VF/XM/27895513/we-2-500x500.jpg" alt="Wooden Tribal Mask">
+                <h3>leather belt</h3>
+                <p>pure designing treditional belt.</p>
+                <span class="price">₹3100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd-Da9FU1f6NC9HgW375gLxdEpLUc033kzNA&s" alt="Wooden Tribal Mask">
+                <h3>tribals art leather belt</h3>
+                <p>designing leather belt.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://www.blairswesternwear.com/cdn/shop/files/thumbnail_IMG_0738_5d178250-a752-47be-83b4-7a55dcd47f74_1024x1024.jpg?v=1692129002" alt="Wooden Tribal Mask">
+                <h3>leather belt.</h3>
+                <p> coloring and treditional belt.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2024/12/470333485/EF/ZD/ET/27895513/ddddddd-1-500x500.jpeg" alt="Wooden Tribal Mask">
+                <h3>peacockfeather leather belt</h3>
+                <p>peacockfeather designing belt .</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            
+        </div>
+    </div>
+
+    <div class="scroll-container">
+        <h2>leather shoes</h2><hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcFFzfdbv5se9OnJKzBHSNipP4OOARTec3OA&s"
+                    alt="Handmade Bamboo Basket">
+                <h3>treditional leather mojadi</h3>
+                <p>Wear Classic Rajasthani Attire.</p>
+                <span class="price">₹2500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXNfaQ3VYcu5NG2je9Xq7HbiiXs6MbTpvgAw&s" alt="Warli Tribal Painting">
+                <h3>Leather Shoes</h3>
+                <p>Pure Vintage Vibe.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/41y-bEpqQCL.jpg" alt="Terracotta Pot">
+                <h3>Rajwadi Mojri</h3>
+                <p>Haritage Walk in Anyware</p>
+                <span class="price">₹3550</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLCBTGFCSOuEjO0qnXP81my3Ohvee_fanq0g&s" alt="Bead Necklace">
+                <h3>Punjabi Shoes</h3>
+                <p>When Culture Meets Comfort</p>
+                <span class="price">₹1350</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg32MoEvOpvJLfbvcb61yYjYu8ngK1ovYJ1NuPCQpkPeoBKbeyOhby5MBcN0_nu8qs8LU&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>Banarasi Mojri</h3>
+                <p>Rhythm of Tradition in Art.</p>
+                <span class="price">₹3100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxpFeNOj_TgGb1VSFqlqnzImNDbYCj5aWUyw&s" alt="Wooden Tribal Mask">
+                <h3>Kolhapri Shoes</h3>
+                <p>Not just shoes it's heritage on your feet.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDrNGHnJBDSaswwIs5NHnEaQKXtmsEFG7FzA&s" alt="Wooden Tribal Mask">
+                <h3>Punjabi Jutti</h3>
+                <p> Keep Calm & Wear Punjabi Jutti.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy4wgQ_iIins19nSbpxXXBM7BaSSrILr7agLJMijzg5UR1o6TH_x8AbH2Kxw_LUMKb49g&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>Jodhpuri Mojri</h3>
+                <p>Not Just Mojri It's Punjabi Girl Comfort.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+        </div>
+    </div>
+    <div class="end">
+       <h2>© 2025. All Rights Are Reserved By The_Glitchhunter.</h2>
+    </div>
+   <script src="product.js"></script>
+   </body>
+</html>

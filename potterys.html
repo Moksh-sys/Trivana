@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potterys</title>
+    <link rel="icon" type="img/jpg" href="LOGO.M.png">
+    <style>
+ body{
+    font-family: sans-serif;
+    background-color: #f6e6d3;
+}
+
+::-webkit-scrollbar {
+            width: 12px;
+            height: 12px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #e3b4ad;
+            /* Light grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #a45e54;
+            /* Dark grey */
+            border-radius: 10px;
+            /* Rounded corners */
+        }
+
+        /* Change the thumb on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #50312d;
+            /* Darker grey */
+        }
+
+header{
+    background-color: #4b2e2a;
+    margin: -8px;
+}
+
+header img{
+    width: 100px;
+}
+
+.logo{
+    display: flex;
+}
+
+.text{
+    text-align: center;
+    color: #f6e6d3;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #5a3e2b;
+}
+
+.scroll-container{
+  margin: auto;
+  width: 86%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: floralwhite;
+  box-shadow: 0 0 10px #4b2e2a;
+  margin-top: 100px;
+}
+
+.con {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #5a3e2b #f0e8dd;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+.scroll-container::-webkit-scrollbar-track {
+  background: #f0e8dd;
+  border-radius: 10px;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #5a3e2b;
+  border-radius: 10px;
+}
+
+.product-card {
+  min-width: 200px;
+  max-width: 220px;
+  background: #fff;
+  border: 2px solid #d4b483;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px gray;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+/* ✅ All images same size */
+.product-card img {
+  width: 100%;
+  height: 200px;   /* desktop default */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  color: #5a3e2b;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.product-card .price {
+  display: block;
+  font-weight: bold;
+  color: #b33c00;
+  font-size: 16px;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  background: #fdf7f0;
+}
+
+.scroll-container h2{
+  margin-top: -2px;
+  margin-bottom: 1px;
+  margin-left: 10px;
+}
+
+.cart{
+  border: 1px solid #4b2e2a;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #4b2e2a;
+  color: white;
+}
+.after-cart{
+  background-color: green;
+
+}
+
+.cart:hover{
+  cursor: pointer;
+}
+
+.end {
+    background-color: #4b2e2a;
+    color: #f6e6d3;
+    padding: 10px;
+    text-align: center;
+    margin: -8px;
+    margin-top: 50px;
+}
+
+.end p {
+    padding: 10px;
+}
+
+/* ---------------- Responsive additions (do not change class names) ---------------- */
+
+/* Large tablets / small desktops */
+@media (max-width: 1024px) {
+  .section-title { font-size: 24px; }
+  header img { width: 80px; }
+  .scroll-container { width: 92%; padding: 18px; margin-top: 80px; }
+  .product-card { min-width: 180px; max-width: 200px; }
+  .product-card img { height: 170px; } /* ✅ same size on tablet */
+}
+
+/* Tablets / landscape phones */
+@media (max-width: 768px) {
+  .logo { align-items: center; gap: 10px; }
+  header img { width: 70px; }
+  .section-title { font-size: 22px; }
+  .scroll-container { width: 95%; padding: 16px; margin-top: 60px; }
+  .con { gap: 14px; padding: 8px 0; }
+  .product-card { min-width: 170px; max-width: 190px; padding: 9px; }
+  .product-card img { height: 150px; } /* ✅ same size on landscape phones */
+  .product-card h3 { font-size: 16px; }
+  .product-card p { font-size: 13px; }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .logo { flex-direction: column; text-align: center; }
+  header img { width: 60px; margin: 8px auto; }
+  .text { padding: 6px 8px; }
+
+  .scroll-container { width: calc(100% - 20px); padding: 12px; margin-top: 40px; }
+  .section-title { font-size: 20px; margin-bottom: 10px; }
+
+  .con { gap: 12px; padding: 6px 0; }
+  .product-card { min-width: 150px; max-width: 180px; padding: 8px; }
+  .product-card img { height: 130px; } /* ✅ same size on small phones */
+  .product-card h3 { font-size: 15px; }
+  .product-card p { font-size: 12px; }
+  .product-card .price { font-size: 15px; }
+
+  .cart { padding: 8px; font-size: 14px; }
+  .end { margin-top: 30px; }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+  .product-card { min-width: 140px; max-width: 160px; }
+  .product-card img { height: 120px; } /* ✅ same size on very small screens */
+  .section-title { font-size: 18px; }
+}
+
+/* Accessibility: increase hit area for product cards on touch devices */
+@media (hover: none) {
+  .product-card { transform: none; }
+  .product-card:active { transform: scale(1.02); }
+}
+
+/* Scrollbar tweaks for small screens */
+@media (max-width: 600px) {
+  .scroll-container::-webkit-scrollbar { height: 6px; }
+  .scroll-container::-webkit-scrollbar-thumb { border-radius: 6px; }
+}
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo3.png" alt="">
+            <div class="text">
+                <h1>Trivana Arts & Crafts</h1>
+                <p>"Where Heritage Meets the World."</p>
+            </div>
+        </div>
+    </header>
+    <!-- <h2 class="section-title">Explore Trivana Crafts</h2> -->
+    <!-- <h2 class="section-title">Explore Trivana Crafts</h2> -->
+    <div class="scroll-container">
+        <h2>Vessel</h2><hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://anythinggrowsalberta.com/wp-content/uploads/2021/12/ceramic-pot-tri-pod-rustic.jpg"
+                    alt="Handmade Bamboo Basket">
+                <h3>Tribal Concrete pot</h3>
+                <p>Eco-friendly pot made by tribal artisans.</p>
+                <span class="price">₹450</span>
+                <p class="cart" onclick="addtocart()" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://i.pinimg.com/originals/55/5a/d1/555ad1148233db4e91112331e23b4b16.jpg" alt="Warli Tribal Painting">
+                <h3>Warli art flower pot</h3>
+                <p>Traditional  Warli black  art  on flower pot.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" onclick="addtocart()" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://i.pinimg.com/originals/f7/0c/d7/f70cd781cac6e5efcc441f2719b6378e.jpg" alt="Terracotta Pot">
+                <h3>Terracotta Pot</h3>
+                <p>Handcrafted terracotta pot, made with natural clay.</p>
+                <span class="price">₹650</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.OZoY1ABSDNEVTuVyaiwZjQHaEy?w=1000&h=647&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Bead Necklace">
+                <h3>Clay Glass (Set of 6)</h3>
+                <p>Reddish Brown Clay Glass crafted by tribal women.</p>
+                <span class="price">₹350</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/2/PW/WW/OT/45220566/mp27-1-scaled-1--500x500.jpg" alt="Wooden Tribal Mask">
+                <h3>Brown Clay Tava Pan</h3>
+                <p>Brown Desi Pan Created By Tribal Artist.</p>
+                <span class="price">₹100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/51wP3SZt3bL._SL1500_.jpg" alt="Wooden Tribal Mask">
+                <h3>Brown Clay Cooking Pot</h3>
+                <p>Brown clay cooking pot Created By Tribal Artist.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.etsystatic.com/36587005/r/il/32af25/4474417915/il_1080xN.4474417915_q9xu.jpg" alt="Wooden Tribal Mask">
+                <h3>Brown Clay Pan (Set of 3)</h3>
+                <p>Brown Pan Created By Tribal Women Artist.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.etsystatic.com/15223853/r/il/8d80f5/1843840709/il_300x300.1843840709_hia4.jpg" alt="Wooden Tribal Mask">
+                <h3>Brown Cooking Vessel</h3>
+                <p>Brown Cooking Vessel Created By Tribal Artist.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/71b4n2pdPXL._AC_SL1500_.jpg" alt="Wooden Tribal Mask">
+                <h3>Brown Clay Oven Tray</h3>
+                <p>Brown clay Tray Created By Tribal Artist.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/51EHZTKUI-L._SL1293_.jpg" alt="Wooden Tribal Mask">
+                <h3>Brown Clay Water pot</h3>
+                <p>Brown Water Pot Created By Tribal Artist.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="scroll-container">
+        <h2>Clay Idols</h2><hr>
+        <div class="con">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1-z6yxvelHR7_08kwuhWav27Do2GYTk3Frw&s"
+                    alt="Handmade Bamboo Basket">
+                <h3>Clay Horse</h3>
+                <p>Colorful terracotta horses bringing tradition to life.</p>
+                <span class="price">₹2500</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMPoLSkcHrLZtq0-_Q3D35xUYmlKjq0Uu-OQ&s" alt="Warli Tribal Painting">
+                <h3>Modern Art</h3>
+                <p>Clay art that blends devotion with simplicity.</p>
+                <span class="price">₹1,200</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJ6_91sO3QVqix5AaJ3ONovF8wWBbyssaba1xYdrsAY2xFBtU8X7o8lXDLg4Rk7BAw48&usqp=CAU" alt="Terracotta Pot">
+                <h3>Ganesha's Idol</h3>
+                <p>Elegance of Lord Ganesha captured in clay.</p>
+                <span class="price">₹3550</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiziVozGGpGCxZ2mglelvvmDf_yQbMw5C3qN5MCMX7YqQeJYUerJi0ATvbr6g_49viLcA&usqp=CAU" alt="Bead Necklace">
+                <h3>Human Idols</h3>
+                <p>Terracotta artistry bringing characters to life.</p>
+                <span class="price">₹1350</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDhNXZUi01Zd7KcvS-rD2ynEjaaLmLQnGFubIIo-b23QvSWemamncmMMAMEe74dZHI3A&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>Terracotta Drummer</h3>
+                <p>Rhythm of tradition captured in clay art.</p>
+                <span class="price">₹3100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8bFQlYNywOVRt_PCwPBNQ-eF-ZmlhKxDhx-xiX1nE6KQINkinBAwCKH_T9thag490dl0&usqp=CAU" alt="Wooden Tribal Mask">
+                <h3>Terracotta Goddess Durga</h3>
+                <p>Divine grace carved in timeless terracotta.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://shop.gaatha.com/image/catalog/Gaatha/16_07_2021/01-(3).jpg" alt="Wooden Tribal Mask">
+                <h3>Terracotta Sculpture.</h3>
+                <p> A traditional terracotta tribal idol showcasing cultural craftsmanship.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.2kSNbT0AtXsX189bGqT6lAHaGZ?w=1080&h=933&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Wooden Tribal Mask">
+                <h3>Monkey Figurines</h3>
+                <p>Colorful monkey figurines symbolizing playfulness and tradition.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://bongoniketan.in/cdn/shop/files/BengalhandmadeterracottaartifactproductfromPanchmura_Bishnupur_Bankura_WestBengalbyBONGONIKETAN57_1024x1024.jpg?v=1717735242" alt="Wooden Tribal Mask">
+                <h3>Folk Musician Figurines.</h3>
+                <p>Terracotta musicians bringing folk melodies to life through clay art.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+
+            <div class="product-card">
+                <img src="https://3.bp.blogspot.com/_2m9Wj6g0ysI/Sok92rIV6cI/AAAAAAAADvg/XJjv-_Ek1Rw/s1600/1.JPG" alt="Wooden Tribal Mask">
+                <h3>Folk Musician Figurines.</h3>
+                <p>Terracotta musicians bringing folk melodies to life through clay art.</p>
+                <span class="price">₹2,100</span>
+                <p class="cart" style="color: white;">Add to Cart</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="end">
+       <h2>© 2025. All Rights Are Reserved By The_Glitchhunter.</h2>
+    </div>
+    <script src="product.js"></script>
+</body>
+</html>
