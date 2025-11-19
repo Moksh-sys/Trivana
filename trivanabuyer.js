@@ -13,9 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const filter = searchBar.value.toLowerCase();
 
       // Supports .pr, .product-card AND .productcard
-      const products = document.querySelectorAll(
-        ".pr, .product-card, .productcard"
-      );
+     const products = document.querySelectorAll(".pr, .product-card, .productcard");
 
       products.forEach((item) => {
         const text = item.innerText.toLowerCase();
@@ -222,3 +220,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
