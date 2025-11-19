@@ -1,8 +1,6 @@
-// Trivanabuyer.js – FIXED VERSION
+// Trivanabuyer.js – FINAL VERSION
 
 document.addEventListener("DOMContentLoaded", function () {
-  "use strict";
-
   /* ===================== */
   /* 🔎 Search bar logic   */
   /* ===================== */
@@ -26,100 +24,74 @@ if (searchButton && searchBar) {
   searchButton.addEventListener("click", runSearch);
 }
 
-
   /* ============================= */
   /* ✨ Scroll-in animations       */
   /* ============================= */
-  try {
-    const scrollElements = document.querySelectorAll(
-      ".artistcard, .productcard, .about-container"
-    );
+  const scrollElements = document.querySelectorAll(
+    ".artistcard, .productcard, .about-container"
+  );
 
-    if ("IntersectionObserver" in window && scrollElements.length > 0) {
-      const observerOptions = { threshold: 0.2 };
+  const observerOptions = { threshold: 0.2 };
 
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-            entry.target.style.transition = "all 0.8s ease-out";
-            obs.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+        entry.target.style.transition = "all 0.8s ease-out";
+        obs.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
 
-      scrollElements.forEach((el) => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(40px)";
-        observer.observe(el);
-      });
-    } else {
-      // Fallback: show them without animation
-      scrollElements.forEach((el) => {
-        el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
-      });
-    }
-  } catch (err) {
-    console.error("Scroll animation error:", err);
-  }
+  scrollElements.forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(40px)";
+    observer.observe(el);
+  });
 
   /* ===================== */
   /* 🎨 Hover effects      */
   /* ===================== */
-
   // Artist cards
-  try {
-    const artistCards = document.querySelectorAll(".artistcard");
-    artistCards.forEach((card) => {
-      card.addEventListener("mouseenter", function () {
-        this.style.transform = "scale(1.05)";
-        this.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
-        this.style.boxShadow = "0 8px 16px rgba(0,0,0,0.2)";
-      });
-      card.addEventListener("mouseleave", function () {
-        this.style.transform = "scale(1)";
-        this.style.boxShadow = "none";
-      });
+  const artistCards = document.querySelectorAll(".artistcard");
+  artistCards.forEach((card) => {
+    card.addEventListener("mouseenter", function () {
+      this.style.transform = "scale(1.05)";
+      this.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
+      this.style.boxShadow = "0 8px 16px rgba(0,0,0,0.2)";
     });
-  } catch (err) {
-    console.error("Artist cards hover error:", err);
-  }
+    card.addEventListener("mouseleave", function () {
+      this.style.transform = "scale(1)";
+      this.style.boxShadow = "none";
+    });
+  });
 
   // Product cards
-  try {
-    const productCards = document.querySelectorAll(".productcard, .product-card");
-    productCards.forEach((card) => {
-      card.addEventListener("mouseenter", function () {
-        this.style.transform = "translateY(-5px)";
-        this.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
-        this.style.boxShadow = "0 6px 12px rgba(0,0,0,0.15)";
-      });
-      card.addEventListener("mouseleave", function () {
-        this.style.transform = "translateY(0)";
-        this.style.boxShadow = "none";
-      });
+  const productCards = document.querySelectorAll(".productcard");
+  productCards.forEach((card) => {
+    card.addEventListener("mouseenter", function () {
+      this.style.transform = "translateY(-5px)";
+      this.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
+      this.style.boxShadow = "0 6px 12px rgba(0,0,0,0.15)";
     });
-  } catch (err) {
-    console.error("Product cards hover error:", err);
-  }
+    card.addEventListener("mouseleave", function () {
+      this.style.transform = "translateY(0)";
+      this.style.boxShadow = "none";
+    });
+  });
 
   // Nav links hover
-  try {
-    const navLinks = document.querySelectorAll(".mid a, .right a");
-    navLinks.forEach((link) => {
-      link.addEventListener("mouseenter", function () {
-        this.style.color = "#e05e41";
-        this.style.transition = "color 0.3s ease";
-      });
-      link.addEventListener("mouseleave", function () {
-        this.style.color = "";
-      });
+  const navLinks = document.querySelectorAll(".mid a, .right a");
+  navLinks.forEach((link) => {
+    link.addEventListener("mouseenter", function () {
+      this.style.color = "#e05e41";
+      this.style.transition = "color 0.3s ease";
     });
-  } catch (err) {
-    console.error("Nav links hover error:", err);
-  }
+    link.addEventListener("mouseleave", function () {
+      this.style.color = "";
+    });
+  });
 
   /* ========================= */
   /* 🤖 Trivana Chatbot Logic  */
@@ -193,7 +165,7 @@ if (searchButton && searchBar) {
   // Open chatbot
   if (launcher && widget) {
     launcher.addEventListener("click", () => {
-      widget.classList.add("open"); // CSS: .chatbot-widget.open { display:flex; }
+      widget.classList.add("open");       // CSS: .chatbot-widget.open { display:flex; }
       launcher.style.display = "none";
       if (input) input.focus();
     });
@@ -215,7 +187,7 @@ if (searchButton && searchBar) {
     });
   }
 
-  // Optional: send on Enter key
+  // Optional: send on Enter key (already works via form submit, but safe)
   if (input) {
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
@@ -225,5 +197,4 @@ if (searchButton && searchBar) {
     });
   }
 });
-
 
